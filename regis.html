@@ -1,0 +1,97 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  	  <link rel="stylesheet" href="css/lreg.css" />
+  
+      <script src="js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+
+<script src="loginregistration/loginregistration.js"></script>
+</head>
+
+
+
+
+
+<body>
+<div class="Registration form">
+<h1 style="color:gray;"><b>Registration Form</b></h1>
+<form action="#" name ="form01" id ="form01">
+	<fieldset>
+<legend> register</legend>
+    <label for="Firstname"><b>Firstname:</b></label>
+    <input type="text" name="firstname" id="firstname" placeholder="Enter first name" autocomplete="off">
+    <h5 id="fnamecheck" class="error_message" style=""           >
+          </h5>
+<br>
+<label for="Middlename"><b>Middlename:</b></label>
+    <input type="text" name="middlename" id="middlename" placeholder="Enter middle name" autocomplete="off">
+    <h5 id="mnamecheck" style="font-size:19px;"           style="color: red;" >
+          </h5>
+<br>
+<label for="Lastname"><b>Lastname:</b></label>
+    <input type="text" name="lastname" id="lastname" placeholder="Enter last name" autocomplete="off">
+    <h5 id="lnamecheck" style="font-size:19px;"           style="color: red;" >
+          </h5>
+
+  <label for="emailaddress"><b>E-Mail:</b></label>
+    <input type="text" name="email" id="email" placeholder="Enter your  E-Mail " autocomplete="off">
+    <h5 id="mailcheck" style="font-size:19px;"           style="color: red;" >
+          </h5>
+<br>
+
+    <label for="password"><b>Password:</b></label>
+    <input type="password" name="password" id="password" placeholder="Enter password"autocomplete="off">
+    <h5 id="passcheck" style="font-size:19px;"       style="color: red;">
+          <!--  **Please Fill the password-->
+          </h5><br>
+
+  <label for="conpass"><b>Confirm Password:</b></label>
+    <input type="password" name="confirmpassword" id="conpass" placeholder="Enter confirm password" autocomplete="off">
+    <h5 id="conpasscheck" style="font-size:19px;"           style="color: red;" >
+          </h5>
+<br>
+<p style="color:darkorange"><label for="birthday"><b>Birthday:</b></label>
+  <input type="date" id="birthday"  style=color:red        name="birthday"><br><br></p>
+
+    <label for="ContactNo."><b>Contact No.:</b></label>
+     <input type="tel" id="phone"  name="phone" placeholder="phone number "   
+     pattern="[0-9]{2}-[0-9]{3}-[0-9]{4}-[0-9]{3}" title="country code  ten number  phone number "   autocomplete="off" required ><br><br>
+  
+<br>
+<span>
+
+<label for ="Gender"  ><b>Gender:</b></label>
+<input type="checkbox"  id= "male" name="male " value="male"> 
+<label for ="checkbox" name="checkbox" ><b>male</b></label> 
+<input type="checkbox"  id= "female" name="female " value="female"> 
+<label for ="checkbox" name="checkbox" ><b>female</b></label>
+<input type="checkbox"  id= "other" name="other " value="other"> 
+<label for ="checkbox" name="checkbox" ><b>other</b></label>
+
+</span>
+<br>
+<br>
+<p><b>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</b></p>
+<br>
+    <input type="submit" class="registerbtn"  id="btnsubmit" name="Register" value="Register">
+<br>
+<br> 
+<div class="signin">Already Registered ?<a href="loginvalid.html" >Sign In </a></span><!--work as to scroll up -->
+</div></fieldset>
+  </form>
+</div>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+</body>
+</html>

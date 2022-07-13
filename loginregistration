@@ -1,0 +1,106 @@
+<!--loginrgisration.js -->
+
+
+$(document).ready(function(){
+  
+  $("#usercheck").hide();
+  $("#passcheck").hide();
+
+var user_err=true;
+var pass_err=true;
+
+
+$("#username").keyup(function(){
+ username_check();
+});
+
+
+function username_check() {
+  var user_val=$("#username").val();
+if(user_val.length=="")
+{
+  $("#usercheck").show();
+  $("#usercheck").html("**please fill valid name ");
+  $("#usercheck").focus();
+  $("#usercheck").css('color','red');
+  pass_err= false;
+  return false;
+}
+else {
+  $("#usercheck").hide();
+  } 
+
+if((user_val.length<6)||(user_val.length<9))
+{
+  $("#usercheck").show();
+  $("#usercheck").html("**Username mst be within required range  ");
+  $("# usercheck").focus();
+  $("#usercheck").css('color','red');
+  pass_err=false;
+  return false;
+}
+else {
+  $("#usercheck").hide();
+  } 
+  
+
+}
+
+$("#passcheck").keyup(function(){
+ password_check();
+
+});
+function password_check(){
+var pass_val=$("#password").val();
+if (pass_val.length=="")
+{
+$("#passcheck").show();
+$("#passcheck").html("**please fill  the pass ");
+
+$("#passcheck").css ("color","red");
+            pass_err = false;
+            return false;
+            }
+
+
+            else{
+                $("#passcheck").hide();
+                }
+if ((pass_val.length<6)||(pass_val.length <8))
+{
+$("#passcheck").show();
+$("#passcheck").html("**please fill  the password in given range 9");
+
+$("#passcheck").css ("color","red");
+            pass_err = false;
+            return false;            }
+ else{
+                $("#passcheck").hide();
+                }
+    
+}
+
+$("#btnsubmit").click(function(){
+
+user_err = true;
+pass_err = true;
+
+
+username_check();
+password_check();
+
+if(user_err == true  && pass_err == true  )
+{
+return true;
+}
+else
+{
+return false;
+}
+
+
+});
+
+});
+  
+

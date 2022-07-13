@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>login form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" >
+ <style>
+
+
+.error_message{
+  font-size:19px;
+color:red;
+margin:0;
+line-height:1.5;
+}
+body{
+font-family:calibri,arial,sans-serif;
+background-color:powderblue;
+margin:0;
+padding:0;
+border:0;
+outline:0;
+
+}
+
+.password {
+  text-align: center;
+  float: right;
+  padding-top: 50px;
+}
+.login-form {
+margin-top:5%;
+margin-bottom:5%;position:relative;
+  width: 490px; left:32%;
+  height:700px;border: 6px solid#ff0000;
+  padding: 17px;
+background-color:#00ffff;
+}
+.login-form h2{
+font-size:50px;
+text-align:center;
+text-transform:uppercase;
+margin:19px;
+}
+.login-form label{
+font-size:27px;
+text-align: right;
+margin:29px;
+}
+
+.login-form input[type=text],
+.login-form input[type=password]{
+margin:-1%;
+font-size:20px;
+width:395px;
+
+padding:13px;
+border:2;
+outline:none;
+border-radius:5px;
+}
+
+.submitbtn {
+font-size:18px;
+color:white;
+background-color:green;
+font-weight:bold;
+padding: 79px;
+width:70%;
+margin:10px  15px;
+padding:8px 6px;
+border:5px ;
+cursor:pointer;
+}
+.submitbtn:hover
+{
+
+border :solid black;
+}
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  
+  $("#usercheck").hide();
+  $("#passcheck").hide();
+
+var user_err=true;
+var pass_err=true;
+
+
+$("#username").keyup(function(){
+ username_check();
+});
+
+
+function username_check() {
+  var user_val=$("#username").val();
+if(user_val.length=="")
+{
+  $("#usercheck").show();
+  $("#usercheck").html("**please fill valid name ");
+  $("#usercheck").focus();
+  $("#usercheck").css('color','red');
+  user_err= false;
+  return false;
+}
+else {
+  $("#usercheck").hide();
+  } 
+
+if((user_val.length<6)||(user_val.length<9))
+{
+  $("#usercheck").show();
+  $("#usercheck").html("**Username mst be within required range  ");
+  $("# usercheck").focus();
+  $("#usercheck").css('color','red');
+  user_err=false;
+  return false;
+}
+else {
+  $("#usercheck").hide();
+  } 
+  
+
+}
+
+$("#password").keyup(function(){
+ password_check();
+
+});
+function password_check(){
+var pass_val=$("#password").val();
+if (pass_val.length=="")
+{
+$("#passcheck").show();
+$("#passcheck").html("**please fill  the password ");
+$("#passcheck").focus();
+$("#passcheck").css ("color","red");
+            pass_err = false;
+            return false;
+            }
+
+
+            else{
+                $("#passcheck").hide();
+                }
+if ((pass_val.length<6)||(pass_val.length <8))
+{
+$("#passcheck").show();
+$("#passcheck").html("**please fill  the password in given range 9");
+$("#passcheck").focus();
+$("#passcheck").css ("color","red");
+            pass_err = false;
+            return false;            }
+ else{
+                $("#passcheck").hide();
+                }
+    
+}
+
+$("#btnsubmit").click(function(){
+
+user_err = true;
+pass_err = true;
+
+
+username_check();
+password_check();
+
+if(user_err == true  && pass_err == true  )
+{
+return true;
+}
+else
+{
+return false;
+}
+
+
+});
+
+});
+  </script>
+</head>
+<body>
+
+
+
+
+
+<div class="login-form">
+
+<h2 style="color: red;">LOGIN PAGE</h2>
+
+<form action="#" name ="form1" id ="form1">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" placeholder="Enter Username" autocomplete="off">
+    <h5 id="usercheck"    style="font-size:23px;"           style="color: red;" >
+    </h5>
+<br><br>
+ <label for="password">Password:</label>
+    <input type="password" name="password" id="password" placeholder="Enter password"autocomplete="off">
+    <h5 id="passcheck" style="font-size:19px;"     s  style="color: red;">
+  
+          </h5><br>
+
+    <input type="submit"  id="btnsubmit"  class="submitbtn" name="btnsubmit" value="LOGIN">
+<br>
+<span>
+<input type="checkbox"  id= "remember" name="remember " value="remember me"> 
+<label for ="checkbox" name="checkbox" >Remember me</label>
+</span>
+<div class="password">Forget <a href="#" >Password ?</a></span><!--work as to scroll up --></div>
+  </form>
+</div>
+
+</body>
+</html>
